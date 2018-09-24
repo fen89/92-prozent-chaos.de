@@ -2,6 +2,7 @@
   "name": "dev-blog",
   "version": "1.0.0",
   "description": "A developers heaven",
+  "website": "https://github.com/fen89/blog-test",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -9,7 +10,9 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
-    "lint": "eslint --fix --ext .js,.vue bin/ lib/ test/"
+    "lint": "eslint --fix --ext .js,.vue bin/ lib/ test/",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d docs/.vuepress/dist"
   },
   "repository": {
     "type": "git",
@@ -21,6 +24,7 @@
     "node": ">=8"
   },
   "dependencies": {
-    "eslint": "^5.6.0"
+    "eslint": "^5.6.0",
+    "gh-pages": "^2.0.0"
   }
 }

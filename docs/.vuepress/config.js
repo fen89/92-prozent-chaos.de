@@ -1,10 +1,16 @@
 module.exports = {
+  base: '/blog-test/',
   title: '#dev',
   description: 'A stupid dev-blog',
   serviceWorker: {
     updatePopup: {
       message: 'New content is available.',
       buttonText: 'Refresh'
+    }
+  },
+  markdown: {
+    config: md => {
+      // more markdown plugins
     }
   },
   themeConfig: {
@@ -17,23 +23,6 @@ module.exports = {
     sidebar: {
       '/wiki/': generateWikiSidebar()
     }
-    // sidebar: [
-    //     {
-    //         title: 'Angular',
-    //         collapsable: false,
-    //         children: [
-    //             'wiki/angular/intro',
-    //             'wiki/angular/best-practices/',
-    //         ]
-    //     },
-    //     {
-    //         title: 'Vue.js',
-    //         collapsable: false,
-    //         children: [
-    //             'wiki/vue/',
-    //         ]
-    //     }
-    // ]
   }
 };
 
@@ -43,17 +32,19 @@ function generateWikiSidebar () {
       title: 'Angular',
       collapsable: false,
       children: [
-        '',
-        'angular/',
         'angular/best-practices/',
+        'angular/best-practices/ngrx',
+        'angular/best-practices/project-structure',
       ]
     },
     {
       title: 'Vue.js',
       collapsable: false,
       children: [
-        '',
-        'vue/',
+        'vue/best-practices/',
+        'vue/best-practices/basics',
+        'vue/best-practices/component-structure',
+        'vue/best-practices/vuex',
       ]
     }
   ]

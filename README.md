@@ -12,3 +12,4 @@
 
 # Deploy
 
+`yarn run predeploy` und `yarn run deploy`
