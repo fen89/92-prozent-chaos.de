@@ -1,0 +1,26 @@
+{
+  "name": "dev-blog",
+  "version": "1.0.0",
+  "description": "A developers heaven",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "lint": "eslint --fix --ext .js,.vue bin/ lib/ test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fen89/blog-test.git"
+  },
+  "author": "Tobi Goerg",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8"
+  },
+  "dependencies": {
+    "eslint": "^5.6.0"
+  }
+}
