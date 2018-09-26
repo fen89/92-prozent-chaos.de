@@ -1,6 +1,6 @@
 {
-  "name": "dev-blog",
-  "version": "1.0.0",
+  "name": "92-percent-chaos",
+  "version": "0.0.1",
   "description": "A developers heaven",
   "website": "https://github.com/fen89/blog-test",
   "main": "index.js",
@@ -24,7 +24,13 @@
     "node": ">=8"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-brands": "^5.0.13",
     "eslint": "^5.6.0",
-    "gh-pages": "^2.0.0"
+    "gh-pages": "^2.0.0",
+    "nprogress": "^0.2.0",
+    "prismjs": "^1.15.0",
+    "prismjs-tomorrow-theme": "^0.0.1",
+    "vuetify": "^1.2.5"
   }
 }

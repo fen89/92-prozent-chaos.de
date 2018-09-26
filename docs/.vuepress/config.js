@@ -1,7 +1,11 @@
 module.exports = {
   base: '/blog-test/',
-  title: '#dev',
-  description: 'A stupid dev-blog',
+  title: '92-percent-chaos',
+  description: 'Another simple developers blog.',
+  head: [
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }],
+    ['link', { rel: 'stylesheet', href: 'https://unpkg.com/vuetify/dist/vuetify.min.css' }]
+  ],
   serviceWorker: {
     updatePopup: {
       message: 'New content is available.',
@@ -18,15 +22,15 @@ module.exports = {
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about/' },
       { text: 'Blog', link: '/blog/' },
-      { text: 'Wiki', link: '/wiki/' }
+      { text: 'Guides', link: '/guides/' }
     ],
     sidebar: {
-      '/wiki/': generateWikiSidebar()
+      '/guides/': generateGuidesSidebar()
     }
   }
 };
 
-function generateWikiSidebar () {
+function generateGuidesSidebar () {
   return [
     {
       title: 'Angular',
