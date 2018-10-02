@@ -14,6 +14,7 @@
 import nprogress from 'nprogress';
 
 import Home from './layouts/Home';
+import Blog from './layouts/Blog';
 import Post from './layouts/Post';
 import MainHero from './components/MainHero';
 import Navbar from './components/Navbar';
@@ -22,6 +23,7 @@ export default {
     name: 'layout',
     components: {
         Home,
+        Blog,
         Post,
         MainHero,
         Navbar
@@ -30,9 +32,11 @@ export default {
     computed: {
         layout() {
             const { path } = this.$page;
-            
+            console.log('path', path);
             if (path === '/') {
                 return 'home';
+            } else if (new RegExp('^/blog/$').test(path)) {
+                return 'blog';
             } else {
                 return 'post';
             }

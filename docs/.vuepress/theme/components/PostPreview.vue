@@ -30,10 +30,8 @@
                   </v-btn>
                    <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn flat class="blue--text">
-                      <router-link :to="post.path">
+                    <v-btn :to="post.path" flat class="blue--text">
                         Read More
-                      </router-link>
                     </v-btn>
                     </v-card-actions>
                 </v-card-actions>

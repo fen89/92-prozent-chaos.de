@@ -29,7 +29,7 @@ export default {
 
   mounted() {
     // TODO: remove debug trace
-    console.log(this.$route);
+    // console.log(this.$route);
   }
 };
 </script>

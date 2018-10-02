@@ -1,8 +1,6 @@
 <template>
-    <v-btn flat>
-        <router-link :to="link" :exact="exact">
+    <v-btn :to="link" flat>
             {{ item.text }}
-        </router-link>
     </v-btn>
 </template>
 
