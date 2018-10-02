@@ -13,7 +13,7 @@
 
         <v-spacer></v-spacer>
 
-        <v-btn
+        <!-- <v-btn
           v-for="icon in icons"
           :key="icon"
           class="mx-3"
@@ -21,7 +21,7 @@
           icon
         >
           <v-icon size="24px">{{ icon }}</v-icon>
-        </v-btn>
+        </v-btn> -->
       </v-card-title>
 
       <v-card-actions class="grey darken-3 justify-center">

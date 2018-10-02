@@ -22,7 +22,11 @@
               <a href="#!" class="body-2 black--text">EDIT</a>
             </v-flex>
           </v-layout>
-          <v-list-group
+            <v-list-group v-if="items.length">
+
+            </v-list-group>
+
+          <!-- <v-list-group
             v-else-if="item.children"
             v-model="item.model"
             :key="item.text"
@@ -60,14 +64,19 @@
                 {{ item.text }}
               </v-list-tile-title>
             </v-list-tile-content>
-          </v-list-tile>
+          </v-list-tile> -->
         </template>
       </v-list>
 </v-navigation-drawer>
 </template>
 
 <script>
+
+// TODO: Check https://github.com/vuejs/vuepress/blob/master/packages/%40vuepress/theme-default/components/Sidebar.vue
+
 export default {
+  // props: ['items'], // why?
+
   data() {
     return {
       drawer: null,
@@ -102,6 +111,43 @@ export default {
         { icon: 'keyboard', text: 'Go to the old version' }
       ]
     };
+  },
+
+  created() {
+    this.refreshIndex();
+  },
+
+  watch: {
+    $route() {
+      this.refreshIndex();
+    }
+  },
+
+  methods: {
+    refreshIndex() {
+      const index = resolveOpenGroupIndex(this.$route, this.items);
+      if (index > -1) {
+        this.openGroupIndex = index;
+      }
+    },
+
+    toggleGroup(index) {
+      this.openGroupIndex = index === this.openGroupIndex ? -1 : index;
+    },
+
+    isActive(page) {
+      return isActive(this.$route, page.regularPath);
+    }
   }
 };
+
+function resolveOpenGroupIndex(route, items) {
+  for (let i = 0; i < items.length; i++) {
+    const item = items[i];
+    if (item.type === 'group' && item.children.some(c => isActive(route, c.path))) {
+      return i;
+    }
+  }
+  return -1;
+}
 </script>

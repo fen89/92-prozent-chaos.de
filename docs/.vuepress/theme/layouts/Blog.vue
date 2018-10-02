@@ -6,7 +6,8 @@
                         <h2 class="headline">{{ title }}</h2>
                         <h3>BLOG</h3>
                         <pre>{{ content }}</pre>
-                        <Content :custom="false"/>
+                        <slot name="content"></slot>
+                        <!-- <Content :custom="false"/> -->
                         <PostList>
                     <!-- todo -->
                 </PostList>
@@ -30,7 +31,8 @@ export default {
         },
         content() {
             return this.$page;
-        }
+        },
+
     }
 }
 </script>

@@ -1,11 +1,18 @@
 <template>
     <v-app light>
-        <GuideSidebar/>
-        <v-container fluid fill-height>
+        <Sidebar/>
+        <v-container fill-height>
             <v-layout row wrap>
                 <v-flex>
-                    <h2 class="headline">Guides</h2>
-                    <Content :custom="false"/>
+                    <!-- <h2 class="headline">Guides</h2> -->
+                    <v-card>
+                        <v-card-title>
+                            <span class="headline">{{ pageTitle }}</span>
+                        </v-card-title>
+                        <v-card-text>
+                            <Content :custom="false"/>
+                        </v-card-text>
+                    </v-card>
                 </v-flex>
             </v-layout>
         </v-container>
@@ -13,14 +20,20 @@
 </template>
 
 <script>
-import GuideSidebar from '../components/GuideSidebar';
-import PostList from '../components/PostList';
+import Sidebar from '../components/Sidebar';
 
 export default {
   name: 'home',
   components: {
-    GuideSidebar,
-    PostList
+    Sidebar
+  },
+  computed: {
+      frontmatter() {
+          return this.$page.frontmatter;
+      },
+      pageTitle() {
+          return this.frontmatter.title;
+      }
   }
 };
 </script>
