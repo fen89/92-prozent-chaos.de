@@ -1,22 +1,15 @@
 <template>
     <v-app light>
-        <v-container>
+        <v-container fluid>
             <v-layout row wrap align-center>
                 <v-flex>
                     <v-card>
-                        <v-img
+                        <!-- <v-img
                             class="white--text"
                             height="170px"
                             src="https://picsum.photos/g/600/400/?random"
                         >
-                        <!-- <v-container fill-height fluid>
-                            <v-layout>
-                            <v-flex xs12 align-end d-flex>
-                                <span class="headline">{{ title }}</span>
-                            </v-flex>
-                            </v-layout>
-                        </v-container> -->
-                        </v-img>
+                        </v-img> -->
                         <v-card-title>
                             <span class="headline">{{ title }}</span>
                         </v-card-title>

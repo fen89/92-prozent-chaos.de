@@ -5,6 +5,7 @@
                     <v-flex>
                         <h2 class="headline">{{ title }}</h2>
                         <h3>BLOG</h3>
+                        <pre>{{ content }}</pre>
                         <Content :custom="false"/>
                         <PostList>
                     <!-- todo -->
@@ -26,6 +27,9 @@ export default {
     computed: {
         title() {
             return this.$page.title;
+        },
+        content() {
+            return this.$page;
         }
     }
 }

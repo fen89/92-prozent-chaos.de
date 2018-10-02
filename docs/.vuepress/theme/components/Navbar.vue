@@ -1,7 +1,15 @@
 <template>
-    <v-toolbar class="white">
-        <v-toolbar-side-icon></v-toolbar-side-icon>
-        <v-toolbar-title v-text="title"></v-toolbar-title>
+    <v-toolbar
+        :clipped-left="$vuetify.breakpoint.lgAndUp"
+        dark 
+        app
+        fixed 
+        color="teal darken-3"
+    >
+        <v-toolbar-title style="width: 300px" class="ml-0 pl-3">
+            <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+            <span class="hidden-sm-and-down" v-text="title"></span>
+        </v-toolbar-title>
         <v-spacer></v-spacer>
         <NavLinks :links="links"/>
     </v-toolbar>
@@ -16,7 +24,8 @@ export default {
     },
     data() {
         return {
-            title: '92-percent-chaos',
+            drawer: null,
+            title: '92 % chaos',
             links: [
                 { title: 'Home' },
             ]

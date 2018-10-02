@@ -1,6 +1,6 @@
 module.exports = {
   base: '/blog-test/',
-  title: '92-percent-chaos',
+  title: '92-prozent-chaos',
   description: 'Another simple developers blog.',
   head: [
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }],
