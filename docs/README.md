@@ -10,4 +10,3 @@ features:
   details: This entire doc was basically made with VuePress which parsed markdown files and corresponding assets using webpack.
 footer: made with love and coffe
 ---
-<LatestBlogPosts />

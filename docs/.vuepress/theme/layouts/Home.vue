@@ -2,6 +2,9 @@
     <v-app light>
         <v-container>
             <v-layout row wrap align-center>
+                 <Content/>
+            </v-layout>
+            <v-layout row wrap align-center>
                 <v-flex xs12 sm4 class="my-3">
                     <h2 class="headline">Latest Blog posts</h2>
                 </v-flex>

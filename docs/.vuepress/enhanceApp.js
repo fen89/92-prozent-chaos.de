@@ -1,5 +1,5 @@
 import Vuetify from "vuetify";
-import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
+// import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
 
 import fontawesome from '@fortawesome/fontawesome'
 import {
@@ -8,6 +8,7 @@ import {
   faLinkedin,
   faInstagram
 } from '@fortawesome/fontawesome-free-brands'
+
 
 export default ({
   Vue, // the version of Vue being used in the VuePress app

@@ -1,25 +1,19 @@
 <template>
-<v-card class="my-2" hover :to="post.path">
+<v-card class="my-2" hover :to="post.path" height="100%">
   <v-img
     class="white--text"
-    height="170px"
-    src="https://picsum.photos/g/600/400/?random"
+    height="50vh"
+    :src="$withBase(postFeaturedImage)"
   >
-   <!-- <v-container fill-height fluid>
-    <v-layout>
-      <v-flex xs12 align-end d-flex>
-        <span class="headline">{{ post.title }}</span>
-      </v-flex>
-    </v-layout>
-  </v-container> -->
   </v-img>
   <v-card-title>
     <span class="headline">{{ post.title }}</span>
+    <p>{{ post.date }}</p>
   </v-card-title>
   <v-card-text>
     {{ postDescription }}
   </v-card-text>
-   <v-card-actions>
+   <v-card-actions class="card-actions">
       <v-btn icon class="red--text">
         <v-icon medium>fa-reddit</v-icon>
       </v-btn>
@@ -44,6 +38,9 @@ export default {
   },
 
   computed: {
+    postFeaturedImage() {
+      return this.frontmatter.image || 'https://picsum.photos/g/600/400/?random';
+    },
     postDescription() {
       return this.frontmatter.description;
     },
@@ -65,3 +62,9 @@ export default {
   }
 };
 </script>
+<style>
+.card-actions {
+  flex: 1 0 auto;
+}
+</style>
+

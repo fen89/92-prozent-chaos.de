@@ -36,14 +36,39 @@ export default {
                 .filter(page => !page.frontmatter.blog);
         },
 
+        postsByDate() {
+          const postsWithDate = this.posts.filter(post => post.frontmatter.date);
+          const postsWithoutDate = this.posts.filter(post => !post.frontmatter.date);
+
+          let mapped = postsWithDate
+            .map((p, i) => ({ index: i, date: +new Date(p.frontmatter.date)}));
+
+          mapped.sort((a, b) => {
+            if (a.date > b.date) {
+              return -1;
+            }
+            if (a.date < b.date) {
+              return 1;
+            }
+            return 0;
+          });
+          return mapped.map(m => postsWithDate[m.index]).concat(postsWithoutDate);
+        },
+
         latestPost() {
-          return this.posts.pop();
+          return this.postsByDate.shift();
         },
 
         otherPosts() {
-          return this.posts.slice(0, this.posts.length);
+          return this.postsByDate.slice(0, this.posts.length);
         }
-        
+    },
+    methods: {
+      sortByDate(array) {
+        const sorted = array.sort((a, b) => {
+          a.date
+        })
+      }
     }
 }
 </script>

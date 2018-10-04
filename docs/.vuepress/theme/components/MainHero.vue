@@ -1,23 +1,18 @@
 <template>
-    <section class="hero main-hero">
-        <v-parallax src="https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" height="600">
+    <section class="hero main-hero slanted">
+        <v-parallax :src="backgroundImage" height="600">
           <v-layout
             column
             align-center
             justify-center
-            class="white--text"
           >
-            <img src="assets/vuetify.png" alt="Vuetify.js" height="200">
-            <h1 class="white--text mb-2 display-1 text-xs-center">Parallax Template</h1>
-            <div class="subheading mb-3 text-xs-center">Powered by Vuetify</div>
-            <v-btn
-              class="blue lighten-2 mt-5"
-              dark
-              large
-              href="/pre-made-themes"
+           <v-avatar
+              size="200px"
             >
-              Get Started
-            </v-btn>
+              <img :src="portraitImage" alt="Me, myself and I">
+           </v-avatar>
+            <h1 class="white--text p-2 display-1 text-xs-center">{{ heading }}</h1>
+            <div class="subheading">{{ subheading }}</div>
           </v-layout>
         </v-parallax>
     </section>
@@ -26,10 +21,29 @@
 <script>
 export default {
   name: 'main-hero',
-
+  props: {
+    heading: {
+      default: '92 % chaos'
+    },
+    subheading: {
+      default: 'just another dev blog'
+    }
+  },
+  data() {
+    return {
+      portraitImage: 'tobi.jpg',
+      backgroundImage: 'images/header.jpeg', // 'https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
+    }
+  },
   mounted() {
     // TODO: remove debug trace
     // console.log(this.$route);
   }
 };
 </script>
+
+<style>
+
+
+
+</style>

@@ -5,7 +5,6 @@
                     <v-flex>
                         <h2 class="headline">{{ title }}</h2>
                         <h3>BLOG</h3>
-                        <pre>{{ content }}</pre>
                         <slot name="content"></slot>
                         <!-- <Content :custom="false"/> -->
                         <PostList>
