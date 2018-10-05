@@ -1,5 +1,6 @@
 ---
 blog: true
+permalink: /blog
 ---
 
 # Blog

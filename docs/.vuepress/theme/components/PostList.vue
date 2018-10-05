@@ -4,8 +4,9 @@
           grid-list-md
         >
           <v-layout row wrap>
+            <!-- <pre>{{ $site.pages }}</pre> -->
             <v-flex v-bind="{ [ 'xs-12' ]: true }">
-              <PostPreview :post="latestPost"/>              
+              <PostPreview :featured="true" :post="latestPost"/>              
             </v-flex>
           </v-layout>
           <v-layout row wrap>
@@ -32,7 +33,7 @@ export default {
     computed: {
       posts() {
             return this.$site.pages
-                .filter(page => page.path.startsWith('/blog/'))
+                .filter(page => page.regularPath.startsWith('/blog/'))
                 .filter(page => !page.frontmatter.blog);
         },
 

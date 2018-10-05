@@ -1,5 +1,5 @@
-import Vuetify from "vuetify";
-// import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
+// bugfix for prod build, see https://github.com/vuejs/vuepress/issues/451
+import Vuetify from "../../node_modules/vuetify";
 
 import fontawesome from '@fortawesome/fontawesome'
 import {

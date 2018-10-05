@@ -1,17 +1,19 @@
 <template>
-<v-card class="my-2" hover :to="post.path" height="100%">
+<v-card class="my-2 post-preview" hover :to="post.path" height="100%">
   <v-img
     class="white--text"
-    height="50vh"
+    :height="postFeaturedImageHeight"
     :src="$withBase(postFeaturedImage)"
   >
   </v-img>
-  <v-card-title>
-    <span class="headline">{{ post.title }}</span>
-    <p>{{ post.date }}</p>
+  <v-card-title primary-title>
+    <h2 class="headline">{{ post.title }}</h2>
   </v-card-title>
   <v-card-text>
-    {{ postDescription }}
+    <span class="grey--text">{{ postDate }}</span>
+  </v-card-text>
+  <v-card-text>
+    <p>{{ postDescription }}</p>
   </v-card-text>
    <v-card-actions class="card-actions">
       <v-btn icon class="red--text">
@@ -24,7 +26,7 @@
         <v-icon medium>fa-facebook</v-icon>
       </v-btn>
       <v-spacer></v-spacer>
-      <v-btn :to="post.path" flat class="blue--text">Read More</v-btn>
+      <v-btn :to="post.path" flat class="blue--text">Weiterlesen</v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -34,10 +36,17 @@ export default {
   props: {
     post: {
       required: true
+    },
+    featured: {
+      type: Boolean,
+      default: false
     }
   },
 
   computed: {
+    postFeaturedImageHeight() {
+      return this.featured ? '50vh' : '300px';
+    },
     postFeaturedImage() {
       return this.frontmatter.image || 'https://picsum.photos/g/600/400/?random';
     },
@@ -52,7 +61,7 @@ export default {
         frontmatter: { date }
       } = this.post;
 
-      return new Date(date).toLocaleDateString('en-us', {
+      return new Date(date).toLocaleDateString('de-de', {
         weekday: 'long',
         year: 'numeric',
         month: 'long',

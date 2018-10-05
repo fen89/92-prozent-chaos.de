@@ -45,6 +45,7 @@ export default {
     computed: {
         layout() {
             const { path } = this.$page;
+
             if (path === '/') {
                 return 'home';
             } else if (new RegExp('^/blog/$').test(path)) {
