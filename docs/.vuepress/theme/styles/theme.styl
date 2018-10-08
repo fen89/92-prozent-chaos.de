@@ -1,0 +1,173 @@
+@import "~prismjs/themes/prism-tomorrow.css"
+
+@require './arrow'
+@require './config'
+@require './code'
+@require './custom-blocks'
+@require './toc'
+@require './nprogress'
+
+
+body
+    font-family 'Roboto', sans-serif
+    font-size 15px
+    color $textColor !important
+
+p
+    color $textColor
+
+a
+    font-weight 400
+
+code 
+    &:after
+        content none
+
+p a code
+    font-weight 400
+    color $accentColor
+
+kbd
+    background #eee
+    border solid 0.15rem #ddd
+    border-bottom solid 0.25rem #ddd
+    border-radius 0.15rem
+    padding 0 0.15em
+
+blockquote
+    font-size 1.2rem
+    color #999
+    border-left .25rem solid #dfe2e5
+    margin-left 0
+    padding-left 1rem
+
+ul, ol
+    padding-left 1.2em
+
+strong
+    font-weight 600
+
+h1, h2, h3, h4, h5, h6
+    font-weight 600
+    text-align left
+    line-height 2
+    .content > &
+        margin-top (0.5rem - $navbarHeight)
+        padding-top ($navbarHeight + 1rem)
+        margin-bottom 0
+        &:first-child
+            margin-top -1.5rem
+            margin-bottom 1rem
+            + p, + pre, + .custom-block
+                margin-top 2rem
+
+    &:hover .header-anchor
+        opacity: 0
+        transform: translate(0px)
+
+h1
+    font-size 2.2rem
+
+h2
+    font-size 1.65rem
+    padding-bottom .3rem
+    border-bottom 1px solid $borderColor
+
+h3
+    font-size 1.35rem
+
+a.header-anchor
+  display none
+  font-size 0.85em
+  margin-left -0.87em
+  padding-right 0.23em
+  margin-top 0.125em
+  opacity 0
+  transform: translate(-10px)
+  &:hover
+    text-decoration none
+
+code, kbd, .line-number
+    font-family source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
+
+p, ul, ol
+    line-height 1.7
+    font-size 16px
+
+hr
+    border 0
+    border-top 1px solid $borderColor
+
+img
+    max-width 100%
+
+code::before
+    content ""
+
+table
+    border-collapse collapse
+    margin 1rem 0
+    display: block
+    overflow-x: auto
+
+tr
+    border-top 1px solid #dfe2e5
+    &:nth-child(2n)
+        background-color #f6f8fa
+
+th, td
+    border 1px solid #dfe2e5
+    padding .6em 1em
+
+.container
+    max-width 1200px
+
+.slanted
+    position: relative;
+    display: block;
+    height: 500px;
+    background-color: $accentColor;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+.slanted:after
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 64px 0 0 100vw;
+    border-color: transparent transparent transparent #fafafa;
+
+/* Blog */
+
+// .article
+//     text-align left
+
+// .article p, .article ul,
+//     font-size: 20px
+//     color: #000;
+
+// .article h1 
+//     font-size 38px
+//     padding-top 50px
+
+// .article h2
+//     font-size 34px
+//     padding-top 50px
+
+// .article h3
+//     font-size 30px
+//     padding-top 30px
+
+// .article h4
+//     font-size 26px
+//     padding-top 30px
+//     margin-bottom -10px
+
+// .post-preview p
+//     font-size 20px

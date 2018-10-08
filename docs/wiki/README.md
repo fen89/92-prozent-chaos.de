@@ -1,5 +1,0 @@
----
-wiki: true
----
-
-# Wiki

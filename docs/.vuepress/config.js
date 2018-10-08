@@ -1,51 +1,30 @@
+const { resolve } = require('path');
+
 module.exports = {
-  base: '/blog-test/',
-  title: '#dev',
-  description: 'A stupid dev-blog',
+  base: '/',
+  title: '92-prozent-chaos',
+  head: [
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }],
+    ['link', { rel: 'stylesheet', href: 'https://unpkg.com/vuetify/dist/vuetify.min.css' }]
+  ],
+  description: 'Noch so ein Dev-Blog',
+  output: resolve(__dirname, 'dist'),
+  plugins: [
+    '@vuepress/blog',
+    '@vuepress/pagination'
+  ],
+  permalink: ':year/:month/:day/:slug',
   serviceWorker: {
     updatePopup: {
       message: 'New content is available.',
       buttonText: 'Refresh'
     }
   },
-  markdown: {
-    config: md => {
-      // more markdown plugins
-    }
-  },
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about/' },
-      { text: 'Blog', link: '/blog/' },
-      { text: 'Wiki', link: '/wiki/' }
+      // { text: 'Blog', link: '/posts/', exact: false },
     ],
-    sidebar: {
-      '/wiki/': generateWikiSidebar()
-    }
   }
 };
-
-function generateWikiSidebar () {
-  return [
-    {
-      title: 'Angular',
-      collapsable: false,
-      children: [
-        'angular/best-practices/',
-        'angular/best-practices/ngrx',
-        'angular/best-practices/project-structure',
-      ]
-    },
-    {
-      title: 'Vue.js',
-      collapsable: false,
-      children: [
-        'vue/best-practices/',
-        'vue/best-practices/basics',
-        'vue/best-practices/component-structure',
-        'vue/best-practices/vuex',
-      ]
-    }
-  ]
-}

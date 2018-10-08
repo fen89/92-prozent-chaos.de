@@ -1,0 +1,61 @@
+<template>
+    <v-toolbar-items class="hidden-sm-and-down">
+        <TheHeaderNavLink :item="item" v-for="(item, index) in userLinks" :key="`link-${index}`"/>
+    </v-toolbar-items>
+</template>
+
+<script>
+import { resolveNavLinkItem } from '../utils/navigation';
+import TheHeaderNavLink from './TheHeaderNavLink.vue';
+
+export default {
+  components: {
+    TheHeaderNavLink
+  },
+
+  computed: {
+    userNav() {
+      return this.$themeLocaleConfig.nav || this.$site.themeConfig.nav || [];
+    },
+
+    nav() {
+      const { locales } = this.$site;
+      if (locales && Object.keys(locales).length > 1) {
+        const currentLink = this.$page.path;
+        const routes = this.$router.options.routes;
+        const themeLocales = this.$site.themeConfig.locales || {};
+        const languageDropdown = {
+          text: this.$themeLocaleConfig.selectText || 'Languages',
+          items: Object.keys(locales).map(path => {
+            const locale = locales[path];
+            const text = (themeLocales[path] && themeLocales[path].label) || locale.lang;
+            let link;
+            // Stay on the current page
+            if (locale.lang === this.$lang) {
+              link = currentLink;
+            } else {
+              // Try to stay on the same page
+              link = currentLink.replace(this.$localeConfig.path, path);
+              // fallback to homepage
+              if (!routes.some(route => route.path === link)) {
+                link = path;
+              }
+            }
+            return { text, link };
+          })
+        };
+        return [...this.userNav, languageDropdown];
+      }
+      return this.userNav;
+    },
+
+    userLinks() {
+      return (this.nav || []).map(link => {
+        return Object.assign(resolveNavLinkItem(link), {
+          items: (link.items || []).map(resolveNavLinkItem)
+        });
+      });
+    }
+  }
+};
+</script>
