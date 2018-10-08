@@ -1,18 +1,17 @@
 const { resolve } = require('path');
 
 module.exports = {
-  base: '/blog-test/',
+  base: '/',
   title: '92-prozent-chaos',
-  layoutDir: 'layouts',
+  head: [
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }],
+    ['link', { rel: 'stylesheet', href: 'https://unpkg.com/vuetify/dist/vuetify.min.css' }]
+  ],
+  description: 'Noch so ein Dev-Blog',
   output: resolve(__dirname, 'dist'),
   plugins: [
     '@vuepress/blog',
     '@vuepress/pagination'
-  ],
-  description: 'Another simple developers blog.',
-  head: [
-    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }],
-    ['link', { rel: 'stylesheet', href: 'https://unpkg.com/vuetify/dist/vuetify.min.css' }]
   ],
   permalink: ':year/:month/:day/:slug',
   serviceWorker: {
@@ -21,44 +20,11 @@ module.exports = {
       buttonText: 'Refresh'
     }
   },
-  markdown: {
-    config: md => {
-      // more markdown plugins
-    }
-  },
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about/' },
-      { text: 'Blog', link: '/blog/' },
-      // { text: 'Guides', link: '/guides/' }
+      // { text: 'Blog', link: '/posts/', exact: false },
     ],
-    // sidebar: {
-    //   '/guides/': generateGuidesSidebar()
-    // }
   }
 };
-
-function generateGuidesSidebar () {
-  return [
-    {
-      title: 'Angular',
-      collapsable: false,
-      children: [
-        'angular/best-practices/',
-        'angular/best-practices/ngrx',
-        'angular/best-practices/project-structure',
-      ]
-    },
-    {
-      title: 'Vue.js',
-      collapsable: false,
-      children: [
-        'vue/best-practices/',
-        'vue/best-practices/basics',
-        'vue/best-practices/component-structure',
-        'vue/best-practices/vuex',
-      ]
-    }
-  ]
-}

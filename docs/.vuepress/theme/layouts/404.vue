@@ -48,7 +48,7 @@ export default {
 
 .not-found {
     font-family:  'Roboto', sans-serif;
-    background: #e57373; /* #33cc99; */
+    background:#33cc99; 
     color:#fff;
     height:100vh;
     overflow: hidden;
@@ -126,15 +126,6 @@ hr{
     z-index: -10;
 }
 
-hr:after {
-    content: "\2022";
-    display: inline-block;
-    position: relative;
-    top: -0.75em;
-    font-size: 2em;
-    padding: 0 0.2em;
-    background: #e57373;
-}
 
 /* Clouds */
 

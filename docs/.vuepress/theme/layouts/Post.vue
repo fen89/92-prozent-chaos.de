@@ -3,23 +3,21 @@
         <v-container>
             <v-layout row wrap align-center>
                 <v-flex>
-                    <v-card>
+                    <v-card class="my-1" height="100%">
                         <v-img
                             class="white--text"
                             height="50vh"
                             :src="$withBase(postFeaturedImage)"
                         >
                         </v-img>
-                        <v-card-title>
-                            <span class="headline">{{ title }}</span>
-                            <v-chip absolute top right v-for="category of categories">{{ category }}</v-chip>
+                          <v-card-title primary-title>
+                            <h1 class="headline">{{ frontmatter.title }}</h1>
                         </v-card-title>
-                        <v-card-text>
-                            {{ $page.frontmatter.date }}
+                          <v-card-text>
+                            <span class="grey--text">{{ frontmatter.date }}</span>
                         </v-card-text>
-                        <v-card-text class="article">
-                            <!-- <pre>cat: {{ $page }}</pre> -->
-                            <Content :custom="false"/>
+                        <v-card-text>
+                            <Content />
                         </v-card-text>
                     </v-card>
                 </v-flex>
@@ -29,23 +27,37 @@
 </template>
 
 <script>
+import TheHeader from "../components/TheHeader";
+import TheFooter from "../components/TheFooter";
+import PostListItem from "../components/PostListItem";
+
 export default {
-    computed: {
-        postFeaturedImage() {
-            return this.$page.frontmatter.image || 'https://picsum.photos/g/600/400/?random';
-        },
-        title() {
-            return this.$page.title;
-        },
-        categories() {
-            return this.$page.frontmatter.categories;
-        }
+  components: {
+    TheHeader,
+    TheFooter,
+    PostListItem
+  },
+  computed: {
+    title() {
+      return this.$page.title;
+    },
+    content() {
+      return this.$page;
+    },
+    frontmatter() {
+      return this.$page.frontmatter;
+    },
+    postFeaturedImage() {
+      return (
+        this.frontmatter.image || "https://picsum.photos/g/600/400/?random"
+      );
     }
-}
+  }
+};
 </script>
 
-<style scoped>
-    .headline {
-        text-align: center;
-    }
+<style>
+.headline {
+  text-align: center;
+}
 </style>

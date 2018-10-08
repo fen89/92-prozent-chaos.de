@@ -1,4 +1,7 @@
 ---
+category: Angular
+tags:
+    - Angular CLI
 title: Angular CLI Quickstart
 image: /blog/angular-cli-quick-start/header.jpg
 date: 2018-10-04

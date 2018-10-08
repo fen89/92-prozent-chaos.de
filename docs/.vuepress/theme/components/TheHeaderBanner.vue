@@ -20,7 +20,6 @@
 
 <script>
 export default {
-  name: 'main-hero',
   props: {
     heading: {
       default: '92 % chaos'

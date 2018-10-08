@@ -1,16 +1,16 @@
 <template>
     <v-toolbar-items class="hidden-sm-and-down">
-        <NavLink :item="item" v-for="(item, index) in userLinks" :key="`link-${index}`"/>
+        <TheHeaderNavLink :item="item" v-for="(item, index) in userLinks" :key="`link-${index}`"/>
     </v-toolbar-items>
 </template>
 
 <script>
 import { resolveNavLinkItem } from '../utils/navigation';
-import NavLink from './NavLink.vue';
+import TheHeaderNavLink from './TheHeaderNavLink.vue';
 
 export default {
   components: {
-    NavLink
+    TheHeaderNavLink
   },
 
   computed: {

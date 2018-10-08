@@ -1,5 +1,6 @@
 <template>
-    <v-toolbar
+    <div>
+        <v-toolbar
         :clipped-left="$vuetify.breakpoint.lgAndUp"
         dark 
         app
@@ -11,16 +12,20 @@
             <span class="hidden-sm-and-down" v-text="title"></span>
         </v-toolbar-title>
         <v-spacer></v-spacer>
-        <NavLinks :links="links"/>
+        <TheHeaderNavLinks :links="links"/>
     </v-toolbar>
+    <TheHeaderBanner v-if="isHome" />
+    </div>
 </template>
 
 <script>
-import NavLinks from './NavLinks';
+import TheHeaderNavLinks from './TheHeaderNavLinks';
+import TheHeaderBanner from './TheHeaderBanner';
 
 export default {
     components: {
-        NavLinks
+        TheHeaderNavLinks,
+        TheHeaderBanner
     },
     data() {
         return {
@@ -30,6 +35,11 @@ export default {
                 { title: 'Home' },
             ]
         };
+    },
+    computed: {
+        isHome() {
+            return this.$page.path === '/';
+        }
     }
 }
 </script>

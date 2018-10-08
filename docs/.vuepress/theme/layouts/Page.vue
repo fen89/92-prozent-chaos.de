@@ -1,19 +1,24 @@
 <template>
     <v-app light>
-        <v-container fluid>
+        <v-container>
             <v-layout row wrap align-center>
                 <v-flex>
                     <v-card>
-                        <!-- <v-img
+                        <v-img
                             class="white--text"
-                            height="170px"
-                            src="https://picsum.photos/g/600/400/?random"
+                            height="50vh"
+                            :src="$withBase(postFeaturedImage)"
                         >
-                        </v-img> -->
+                        </v-img>
                         <v-card-title>
                             <span class="headline">{{ title }}</span>
+                            <v-chip absolute top right v-for="category of categories">{{ category }}</v-chip>
                         </v-card-title>
                         <v-card-text>
+                            {{ $page.frontmatter.date }}
+                        </v-card-text>
+                        <v-card-text class="article">
+                            <!-- <pre>cat: {{ $page }}</pre> -->
                             <Content :custom="false"/>
                         </v-card-text>
                     </v-card>
@@ -26,14 +31,20 @@
 <script>
 export default {
     computed: {
+        postFeaturedImage() {
+            return this.$page.frontmatter.image || 'https://picsum.photos/g/600/400/?random';
+        },
         title() {
             return this.$page.title;
+        },
+        categories() {
+            return this.$page.frontmatter.categories;
         }
     }
 }
 </script>
 
-<style>
+<style scoped>
     .headline {
         text-align: center;
     }

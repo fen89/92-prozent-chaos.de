@@ -1,5 +1,6 @@
 ---
-title: Über mich
+layout: Page
+title: About Me
 permalink: /about
 ---
 
