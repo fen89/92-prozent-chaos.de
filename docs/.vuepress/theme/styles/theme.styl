@@ -15,7 +15,7 @@ a
     font-weight 400
 
 h1, h2, h3, h4, h5, h6
-    text-align center
+    text-align left
     line-height 2
 
     &:hover .header-anchor
@@ -34,6 +34,12 @@ a.header-anchor
 
 ol, ul, p
     line-height 1.7
+
+img
+    max-width 100%
+
+code::before
+    content ""
 
 .container
     max-width 1200px
@@ -61,10 +67,12 @@ ol, ul, p
 
 /* Blog */
 
+.article
+    text-align left
+
 .article p, .article ul,
     font-size: 20px
     color: #000;
-    margin-top 30px
 
 .article h1 
     font-size 38px
@@ -81,7 +89,7 @@ ol, ul, p
 .article h4
     font-size 26px
     padding-top 30px
-    margin-bottom -30px
+    margin-bottom -10px
 
 .post-preview p
     font-size 20px

@@ -7,47 +7,35 @@ description: Schnell und einfach mit Angular und der Angular CLI starten.
 
 # Installation von Angular CLI
 
-Die Installation erfolgt über einen Paket-Manager, wahlweise [npm](https://www.npmjs.com/): `npm i -g @angular/cli` oder [yarn](https://yarnpkg.com): `yarn add global @angular/cli`.
+Die Installation erfolgt mithilfe von [Node und npm](https://nodejs.org/).
 
+```bash
+npm install -g @angular/cli
+```
 
-# Neues Angular-Projekt erstellen
+Sobald die Installation abgeschlossen ist, können wir die Angular CLI benutzen um neue Applikationen zu erstellen.
 
-Der Befehl `ng new [project-name]` erstellt im aktuellen Ordner ein neues Projekt.
+# Ein neues Projekt erstellen
 
-| x | x |
+Um ein neues Angular-Projekt mithilfe der CLI zu erstellen, genügt folgendes Kommando:
 
+```bash
+ng new angular-cli-quickstart
+```
+
+Angular CLI erstellt die Basis-Projekt-Struktur und lädt alle benötigten npm-Pakete herunter (was mitunter ein kleines bisschen dauern kann.
+
+## Weitere Flags für ng new
+
+| Flag               | Standard-Wert | Beschreibung                                  |
+| ------------------ | ------------- | --------------------------------------------- |
+| `--directory`      | Projektname von `ng new`  | Ordnerpfad in welchem das Projekt erstellt werden soll |
+| `--style`          | Der Standard-Style der verwendet werden soll |
+| `--prefix`         | Der Präfix für alle erstellten Komponenten |
+| `--routing`        | Erstellt ein Routing-Modul |
 
 ## Nützliche Befehle
 
 - `ng new` - Erstellt ein neues Projekt
 - `ng generate` - Erstellen von neuen Komponenten, Routen, Service und Pipes
 - `ng serve` - Lokale Entwicklung starten
-
-### TEST 3
-
-hallo 3
-
-#### TEST 4
-
-hallo 4
-
-```js
-// pizzas.action.ts
-export const LOAD_PIZZAS = '[Products] Load Pizzas';
-export const LOAD_PIZZAS_FAIL = '[Products] Load Pizzas Fail';
-export const LOAD_PIZZAS_SUCCESS = '[Products] Load Pizzas Success';
-
-export class LoadPizzas implements Action {
-  readonly type = LOAD_PIZZAS;
-}
-
-export class LoadPizzasFail implements Action {
-  readonly type = LOAD_PIZZAS_FAIL;
-  constructor(public payload: any) {}
-}
-
-export class LoadPizzasSuccess implements Action {
-  readonly type = LOAD_PIZZAS_SUCCESS;
-  constructor(public payload: Pizza[]) {}
-}
-```
