@@ -34,6 +34,45 @@ Angular CLI erstellt die Basis-Projekt-Struktur und lädt alle benötigten npm-P
 | `--prefix`         | Der Präfix für alle erstellten Komponenten |
 | `--routing`        | Erstellt ein Routing-Modul |
 
+::: warning 
+Test
+:::
+
+::: tip 
+Test
+:::
+
+::: danger 
+Test
+:::
+
+> das ist ein quote
+
+::: vue
+.
+├── docs
+│   ├── .vuepress _(**Optional**)_
+│   │   ├── `components` _(**Optional**)_
+│   │   ├── `theme` _(**Optional**)_
+│   │   │   └── Layout.vue
+│   │   ├── `public` _(**Optional**)_
+│   │   ├── `styles` _(**Optional**)_
+│   │   │   ├── index.styl
+│   │   │   └── palette.styl
+│   │   ├── `templates` _(**Optional, Danger Zone**)_
+│   │   │   ├── dev.html
+│   │   │   └── ssr.html
+│   │   ├── `config.js` _(**Optional**)_
+│   │   └── `enhanceApp.js` _(**Optional**)_
+│   │ 
+│   ├── README.md
+│   ├── guide
+│   │   └── README.md
+│   └── config.md
+│ 
+└── package.json
+:::
+
 ## Nützliche Befehle
 
 - `ng new` - Erstellt ein neues Projekt

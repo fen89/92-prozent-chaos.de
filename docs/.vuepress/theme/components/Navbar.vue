@@ -6,7 +6,7 @@
         fixed 
         color="teal darken-3"
     >
-        <v-toolbar-title style="width: 300px" class="ml-0 pl-3">
+        <v-toolbar-title style="" class="navigation-title ml-0 pl-3">
             <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
             <span class="hidden-sm-and-down" v-text="title"></span>
         </v-toolbar-title>
@@ -33,3 +33,11 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    .navigation-title {
+        width: 300px; 
+        z-index: 999;
+    }
+</style>
+

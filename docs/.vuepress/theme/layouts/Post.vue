@@ -49,10 +49,3 @@ export default {
         text-align: center;
     }
 </style>
-
-<style>
-    .article p {
-        font-size: 20px;
-        color: #000;
-    }
-</style>
