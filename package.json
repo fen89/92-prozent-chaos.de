@@ -2,21 +2,21 @@
   "name": "92-prozent-chaos",
   "version": "0.0.1",
   "description": "A developers heaven",
-  "website": "https://github.com/fen89/blog-test",
+  "website": "https://github.com/fen89/fen89.github.io.git",
   "main": "index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs",
+    "build": "vuepress build docs -d ./dist",
     "lint": "eslint --fix --ext .js,.vue bin/ lib/ test/",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d docs/.vuepress/dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fen89/blog-test.git"
+    "url": "git+https://github.com/fen89/fen89.github.io.git"
   },
   "author": "Tobi Goerg",
   "license": "MIT",
