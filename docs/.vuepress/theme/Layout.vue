@@ -36,7 +36,7 @@ export default {
 
   computed: {
     $layout() {
-        console.log('regularPath', this.$page.regularPath || '-');
+        console.log('regularPath', this.$page.regularPath, 'path', this.$page.path);
       if (this.$page.path) {
         // return this.$page.frontmatter.layout || 'Home'; // code not working
         const path = this.$page.regularPath;

@@ -23,7 +23,7 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'About', link: '/about/' },
+      // { text: 'About', link: '/about/' },
       // { text: 'Blog', link: '/posts/', exact: false },
     ],
   }
