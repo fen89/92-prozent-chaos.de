@@ -5,7 +5,7 @@ git:
   depth: false
 branches:
   only:
-    - docs
+    - development
 
 # S: Build Lifecycle
 install:
