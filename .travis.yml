@@ -15,7 +15,7 @@ script:
   - yarn build
 
 after_success:
-  - cd ./dist
+  - cd ./vuepress/dist
   - echo ${GH_CNAME} > CNAME
   - git init
   - git config user.name "${GH_USER_NAME}"
