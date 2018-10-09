@@ -53,6 +53,7 @@ Der Befehl `ng serve` startet den Entwicklungsserver (automatischer Build-Vorgan
 
 ![App works](/blog/angular-cli-quick-start/app-works.png)
 
+Wenn diese Seite in einem neuen Browserfenster geöffnet wird hat alles geklappt.
 
 <!-- 
 ::: warning 
