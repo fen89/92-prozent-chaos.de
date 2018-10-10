@@ -1,15 +1,18 @@
-# Installation von Vuepress
+# [92-prozent-chaos-de](https://92-prozent-chaos.de)
 
-`yarn global add vuepress` 
+My homepage repository
 
-# Development
+Powered by [Vuepress](https://vuepress.vuejs.org/)
 
-`npm run dev`
+## Develop
 
-# Build
-
-`npm run build`
+```
+yarn
+yarn dev
+```
 
 # Deploy
 
-`yarn run predeploy` und `yarn run deploy`
+```
+yarn deploy
+```
