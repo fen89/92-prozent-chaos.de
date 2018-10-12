@@ -4,12 +4,8 @@
             <v-layout row wrap align-center>
                  <Content/>
             </v-layout>
+            <!-- <TheCategoryFilter/> -->
             <v-layout row wrap align-center>
-                <!-- <v-flex xs12>
-                   <v-container>
-                        <h1>Aktuelle Blogbeiträge</h1>
-                   </v-container>
-                </v-flex> -->
                 <PostList/>
             </v-layout>
         </v-container>
@@ -17,11 +13,13 @@
 </template>
 
 <script>
+import TheCategoryFilter from '../components/TheCategoryFilter';
 import PostList from "../components/PostList";
 
 export default {
   name: "Home",
   components: {
+    TheCategoryFilter,
     PostList
   }
 };

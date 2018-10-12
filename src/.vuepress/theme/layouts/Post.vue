@@ -12,12 +12,25 @@
                         </v-img>
                         <v-card-title primary-title>
                           <div>
-                            <h3 class="headline mb-0">{{ frontmatter.title }}</h3>
-                            <span class="grey--text">{{ frontmatter.date | formatDate }}</span>
+                            <h1 class="mb-2">{{ frontmatter.title }}</h1>
+                            <div class="title-meta grey--text">
+                              <span class="title-category grey--text">
+                                <CategoryIcon :category="frontmatter.category"/>
+                              </span>
+                              <span v-if="frontmatter.tags" class="title-tags grey--text">
+                                Tagged in {{ frontmatter.tags | formatArray }}
+                              </span>
+                              <span class="title-bullet grey--text"></span>
+                              <span class="grey--text">
+                                {{ frontmatter.date | formatDate }}
+                              </span>
+                              <span class="title-bullet grey--text"></span>
+                                3 min <i class="far fa-clock fa-fw"></i>
+                            </div>
                           </div>
+                          
                         </v-card-title>
                         <v-card-text>
-                            <v-chip label color="red" text-color="white">{{ content.category }}</v-chip>
                             <Content />
                         </v-card-text>
                     </v-card>
@@ -61,6 +74,19 @@ export default {
     formatDate (value) {
       return format(value, 'dddd, DD.MM.YYYY', { locale: de});
     },
+    formatArray (value) {
+      return value.join(', ');
+    },
   },
 };
 </script>
+
+<style scoped>
+.svg-inline--fa, .svg-inline--fab {
+    vertical-align: middle;
+}
+.title-bullet::after {
+  content: '\02022';
+  margin: 0 10px;
+}
+</style>
