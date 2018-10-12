@@ -9,18 +9,25 @@ branches:
 
 # S: Build Lifecycle
 install:
-  - yarn
+  - yarn install -g vuepress
 
 script:
   - yarn build
 
-after_success:
-  - cd .docs/.vuepress/dist/
-  - echo ${GH_CNAME} > CNAME
-  - git init
-  - git config user.name "${GH_USER_NAME}"
-  - git config user.email "${GH_USER_EMAIL}"
-  - git add .
-  - git commit -m "Build $(date +%Y%m%d%H%M)"
-  - git push --force "https://${GH_TOKEN}@${GH_REPO}" master:master
-# E: Build LifeCycle
+cache:
+  directories:
+    - "node_modules"
+    
+notifications:
+  email: false
+  
+deploy:
+  provider: pages
+  skip-cleanup: true
+  local_dir: src/.vuepress/dist
+  github-token: $GITHUB_TOKEN
+  repo: fen89/fen89.github.io
+  keep-history: true
+  target-branch: master
+  on:
+    branch: development
