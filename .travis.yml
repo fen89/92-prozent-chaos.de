@@ -9,7 +9,7 @@ branches:
 
 # S: Build Lifecycle
 install:
-  - yarn install -g vuepress
+  - yarn global add vuepress
 
 script:
   - yarn build
