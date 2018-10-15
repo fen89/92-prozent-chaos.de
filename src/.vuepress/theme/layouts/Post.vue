@@ -14,11 +14,12 @@
                           <div>
                             <h1 class="mb-2">{{ frontmatter.title }}</h1>
                             <div class="title-meta grey--text">
-                              <span class="title-category grey--text">
+                              <span v-if="frontmatter.category" class="title-category grey--text">
                                 <CategoryIcon :category="frontmatter.category"/>
                               </span>
                               <span v-if="frontmatter.tags" class="title-tags grey--text">
-                                Tagged in {{ frontmatter.tags | formatArray }}
+                                Tagged in 
+                                  <v-chip label outline color="red" v-for="tag in frontmatter.tags" :key="tag">{{ tag }}</v-chip>
                               </span>
                               <span class="title-bullet grey--text"></span>
                               <span class="grey--text">
@@ -26,6 +27,7 @@
                               </span>
                               <span class="title-bullet grey--text"></span>
                                 3 min <i class="far fa-clock fa-fw"></i>
+                                size: {{ $page.size }}
                             </div>
                           </div>
                           

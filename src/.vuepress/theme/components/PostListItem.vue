@@ -3,7 +3,7 @@
     <v-img class="white--text" :src="$withBase(postFeaturedImage)" aspect-ratio="2.75">
     </v-img>
     <v-card-title primary-title>
-      <CategoryIcon :category="post.category" class="category-icon"/>
+      <CategoryIcon v-if="post.category" :category="post.category" class="category-icon"/>
       <div>
         <h3 class="headline mb-0" style="display: inline-block;">
           {{ post.title }}

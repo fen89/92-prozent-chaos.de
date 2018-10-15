@@ -8,6 +8,7 @@
     "doc": "docs"
   },
   "scripts": {
+    "version": "vuepress --version",
     "dev": "vuepress dev src",
     "build": "vuepress build src",
     "lint": "eslint --fix --ext .js,.vue bin/ lib/ test/",
@@ -44,6 +45,6 @@
     "vuetify": "^1.2.5"
   },
   "devDependencies": {
-    "vuepress": "^1.0.0-alpha.9"
+    "vuepress": "^1.0.0-alpha.10"
   }
 }

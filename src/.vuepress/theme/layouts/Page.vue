@@ -12,7 +12,7 @@
                         </v-img>
                         <v-card-title>
                             <span class="headline">{{ title }}</span>
-                            <v-chip absolute top right v-for="category of categories">{{ category }}</v-chip>
+                            <v-chip absolute top right v-for="category of categories" :key="category">{{ category }}</v-chip>
                         </v-card-title>
                         <v-card-text>
                             {{ $page.frontmatter.date }}
