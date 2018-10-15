@@ -10,6 +10,7 @@
   "scripts": {
     "version": "vuepress --version",
     "dev": "vuepress dev src",
+    "debug": "node --inspect-brk ./node_modules/vuepress dev src",
     "build": "vuepress build src",
     "lint": "eslint --fix --ext .js,.vue bin/ lib/ test/",
     "predeploy": "npm run build",

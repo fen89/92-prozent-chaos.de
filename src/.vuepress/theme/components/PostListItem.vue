@@ -1,6 +1,6 @@
 <template>
   <v-card class="my-2 post-preview" hover :to="post.path">
-    <v-img class="white--text" :src="$withBase(postFeaturedImage)" aspect-ratio="2.75">
+    <v-img class="white--text" :src="$withBase(postFeaturedImage)" :aspect-ratio="aspectRatio">
     </v-img>
     <v-card-title primary-title>
       <CategoryIcon v-if="post.category" :category="post.category" class="category-icon"/>
@@ -29,7 +29,7 @@ export default {
 
   computed: {
     aspectRatio() {
-      return featured ? "2.75" : "10";
+      return this.featured ? 2.75 : 1.5;
     },
     postFeaturedImageHeight() {
       return this.featured ? "50vh" : "300px";

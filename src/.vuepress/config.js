@@ -16,7 +16,7 @@ module.exports = {
     '@vuepress/medium-zoom',
     "@vuepress/plugin-notification",
     "@vuepress/back-to-top",
-    require('./plugins/plugins-responsive-images'),
+    // require('./plugins/plugin-responsive-images'),
     require("./plugins/plugin-reading-time")
   ],
   permalink: ':year/:month/:day/:slug',

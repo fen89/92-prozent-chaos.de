@@ -26,8 +26,7 @@
                                 {{ frontmatter.date | formatDate }}
                               </span>
                               <span class="title-bullet grey--text"></span>
-                                3 min <i class="far fa-clock fa-fw"></i>
-                                size: {{ $page.size }}
+                                {{ $page.readingTime.display }} min <i class="far fa-clock fa-fw"></i>
                             </div>
                           </div>
                           

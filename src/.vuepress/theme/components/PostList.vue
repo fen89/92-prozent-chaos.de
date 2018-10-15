@@ -12,10 +12,10 @@
           <v-layout row wrap>
             <v-flex
               v-for="post in otherPosts"
-              v-bind="{ [`xs12 md6 lg4`]: true }"
+              v-bind="{ [`xs12 md12 lg12`]: true }"
               :key="post.path"
             >
-            <PostListItem :post="post"/>
+            <PostListItem :post="post" :featured="true"/>
             </v-flex>
           </v-layout>
         </v-container>
