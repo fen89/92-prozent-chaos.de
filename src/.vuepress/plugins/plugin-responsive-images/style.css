@@ -1,0 +1,10 @@
+.responsive-image {
+    width: 100%;
+    height: auto;
+}
+
+.align-image-center {
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
