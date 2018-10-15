@@ -12,11 +12,12 @@ module.exports = {
   output: resolve(__dirname, 'dist'),
   plugins: [
     '@vuepress/blog',
-    '@vuepress/pagination',
+    // '@vuepress/pagination',
     '@vuepress/medium-zoom',
     "@vuepress/plugin-notification",
     "@vuepress/back-to-top",
-    // "./plugins/plugin-reading-time",
+    require('./plugins/plugins-responsive-images'),
+    require("./plugins/plugin-reading-time")
   ],
   permalink: ':year/:month/:day/:slug',
   serviceWorker: {
