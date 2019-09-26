@@ -6463,9 +6463,9 @@ vuepress@1.0.0-alpha.10:
     "@vuepress/core" "^1.0.0-alpha.10"
     "@vuepress/theme-default" "^1.0.0-alpha.10"
 
-vuetify@^1.2.5:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-1.2.5.tgz#91578367709b20e406f2cdc7a164dfd70df954d9"
+vuetify@^2.0.0:
+  version "2.0.19"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-2.0.19.tgz#f2da44987d1bddbd61b8ffcff34056e5eb5f5ec8"
 
 watchpack@^1.5.0:
   version "1.6.0"
