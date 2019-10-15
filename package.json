@@ -43,7 +43,7 @@
     "prismjs-tomorrow-theme": "^0.0.1",
     "vue": "^2.5.17",
     "vue-read-time": "^1.0.1",
-    "vuetify": "^1.2.5"
+    "vuetify": "^2.0.0"
   },
   "devDependencies": {
     "vuepress": "1.1.0"
