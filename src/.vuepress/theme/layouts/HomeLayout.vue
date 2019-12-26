@@ -1,9 +1,28 @@
 <template>
-    <Content />
+  <div>
+    <div class="container">
+      <div class="flex flex-wrap">
+        <ArticleCard
+          v-for="article in $featuredArticles"
+          :key="article.key"
+          :article="article"
+          class="mx-5 mb-6 sm:mb-10"
+          highlight-every-third
+        />
+      </div>
+    </div>
+    <div class="container">
+        <h2>More Articles</h2>
+    </div>
+    <ArticleList class="mb-12" :articles="$otherArticles" />
+  </div>
 </template>
 
 <script>
+import ArticleCard from "@theme/components/ArticleCard";
+import ArticleList from '@theme/components/ArticleList';
+
 export default {
-    
-}
+  components: { ArticleCard, ArticleList }
+};
 </script>

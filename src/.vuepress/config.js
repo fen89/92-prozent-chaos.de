@@ -31,6 +31,12 @@ module.exports = {
       { text: 'Blog', link: '/articles/', exact: false },
     ],
   },
+  postcss: {
+    plugins: [
+      require('autoprefixer'),
+      require('tailwindcss')('./tailwind.config.js'),
+    ],
+  },
   chainWebpack: (config, isServer) => {
     if (isServer === false) {
       config.node.set('Buffer', false);
