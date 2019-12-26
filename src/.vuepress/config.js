@@ -6,20 +6,14 @@ module.exports = {
   head: [
     ['link', { rel: 'icon', href: '/assets/img/avatar.jpg' }],
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }],
-    ['link', { rel: 'stylesheet', href: 'https://unpkg.com/vuetify/dist/vuetify.min.css' }]
+    // ['link', { rel: 'stylesheet', href: 'https://unpkg.com/vuetify/dist/vuetify.min.css' }]
   ],
   description: 'Entwickler-Blog',
   output: resolve(__dirname, 'dist'),
   plugins: [
-    '@vuepress/blog',
-    // '@vuepress/pagination',
-    '@vuepress/medium-zoom',
-    "@vuepress/plugin-notification",
-    "@vuepress/back-to-top",
-    // require('./plugins/plugin-responsive-images'),
-    require("./plugins/plugin-reading-time")
+
   ],
-  permalink: ':year/:month/:day/:slug',
+  // permalink: ':year/:month/:day/:slug',
   serviceWorker: {
     updatePopup: {
       message: 'Neuer Content verfügbar!',
@@ -27,10 +21,14 @@ module.exports = {
     }
   },
   themeConfig: {
+    minimumFeaturedArticles: 6,
+    featuredArticles: [
+      'angular-cli-quick-start/'
+    ],
     nav: [
       { text: 'Home', link: '/' },
       // { text: 'About', link: '/about/' },
-      // { text: 'Blog', link: '/posts/', exact: false },
+      { text: 'Blog', link: '/articles/', exact: false },
     ],
   },
   chainWebpack: (config, isServer) => {

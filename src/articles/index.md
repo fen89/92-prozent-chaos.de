@@ -1,5 +1,5 @@
 ---
 layout: Posts
 title: My Posts
-permalink: /posts
+permalink: /articles
 ---
