@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { resolve } from "path";
 
 module.exports = (options, ctx) => {
   const { themeConfig, siteConfig } = ctx;
@@ -7,8 +7,8 @@ module.exports = (options, ctx) => {
 
   return {
     plugins: [
-        '@vuepress/plugin-nprogress',
-    ],
+      "@vuepress/plugin-nprogress"
+    ]
     // enhanceAppFiles: resolve(__dirname, "articles.js")
   };
 };

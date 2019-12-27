@@ -52,7 +52,7 @@ export default {
         figure
             flex 1 1 auto
             > div
-                border-bottom-left-radius config('borderRadius.lg')
+                border-bottom-left-radius theme('borderRadius.lg')
                 border-top-right-radius 0
                 width 100%
                 height 100%
@@ -60,10 +60,10 @@ export default {
             flex 0 1 357px
             padding 30px 40px
             border-bottom-left-radius 0
-            border-top-right-radius config('borderRadius.lg')
+            border-top-right-radius theme('borderRadius.lg')
             h2
-                font-size config('textSizes.3xl')
+                font-size theme('textSizes.3xl')
             section
-                font-size config('textSizes.xl')
+                font-size theme('textSizes.xl')
                 line-height 1.55
 </style>

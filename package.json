@@ -32,7 +32,8 @@
     "nprogress": "^0.2.0",
     "prismjs": "^1.15.0",
     "prismjs-tomorrow-theme": "^0.0.1",
-    "vue": "^2.5.17"
+    "vue": "^2.5.17",
+    "vuepress-plugin-clean-urls": "^1.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.3",
