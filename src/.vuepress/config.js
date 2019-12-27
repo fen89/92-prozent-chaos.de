@@ -6,12 +6,12 @@ module.exports = {
   head: [
     // ['link', { rel: 'icon', href: '/assets/img/avatar.jpg' }],S
     [
-      "link",
-      {
-        rel: "stylesheet",
-        href:
-          "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"
-      }
+      // "link",
+      // {
+      //   rel: "stylesheet",
+      //   href:
+      //     "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"
+      // }
     ]
     // ['link', { rel: 'stylesheet', href: 'https://unpkg.com/vuetify/dist/vuetify.min.css' }]
   ],
@@ -43,8 +43,8 @@ module.exports = {
   },
   postcss: {
     plugins: [
+      require("tailwindcss")("./tailwind.config.js"),
       require("autoprefixer"),
-      require("tailwindcss")("./tailwind.config.js")
     ]
   },
   chainWebpack: (config, isServer) => {
