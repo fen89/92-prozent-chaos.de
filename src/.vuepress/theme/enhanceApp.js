@@ -1,5 +1,6 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCalendar, faCalendarAlt, faTag } from '@fortawesome/free-solid-svg-icons'
+import { faGithubSquare } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 import articles from "./articles";
@@ -14,7 +15,7 @@ export default ({
     Vue.mixin(articles);
 
     // font awesome
-    library.add(...[faCalendarAlt, faTag]);
+    library.add(...[faCalendarAlt, faTag, faGithubSquare]);
 
     Vue.component('font-awesome-icon', FontAwesomeIcon);
   }

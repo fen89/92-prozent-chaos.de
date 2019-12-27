@@ -16,10 +16,10 @@
           class="uppercase tracking-wide text-gray-600 text-sm font-semibold"
           v-text="tags"
         ></div>
-        <div class="font-sans text-2xl " v-text="article.title"></div>
+        <div class="font-sans text-2xl" v-text="article.title"></div>
       </header>
       <section
-        class="font-content text-lg text-gray-900"
+        class="font-content text-lg text-gray-600"
         v-text="article.frontmatter.description"
       ></section>
     </main>

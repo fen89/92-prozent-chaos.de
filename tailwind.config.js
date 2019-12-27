@@ -38,6 +38,10 @@ module.exports = {
       '5xl': '3rem',      // 48px
     },
 
+    borderColors: {
+      default: '#dae1e7'
+    },
+
     borderWidth: {
       default: "1px",
       "0": "0",

@@ -25,7 +25,7 @@ module.exports = {
       selector: 'img',
     },
   },
-  // permalink: ':year/:month/:day/:slug',
+  permalink: ':slug',
   // serviceWorker: {
   //   updatePopup: {
   //     message: "Neuer Content verfügbar!",

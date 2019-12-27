@@ -13,14 +13,14 @@ const articles = {
 
             if (featured.length < minimumFeaturedArticles) {
                 let moreFeatured = excludePages(this.$articles, featured)
-                    .slice(0, minimumFeaturedArticles - featured.length)
-                featured.push(...moreFeatured)
+                    .slice(0, minimumFeaturedArticles - featured.length);
+                featured.push(...moreFeatured);
             }
 
-            return featured
+            return featured;
         },
         $otherArticles () {
-            return excludePages(this.$articles, this.$featuredArticles)
+            return excludePages(this.$articles, this.$featuredArticles);
         }
     }
 }
