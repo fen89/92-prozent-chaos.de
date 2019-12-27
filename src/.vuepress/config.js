@@ -17,25 +17,23 @@ module.exports = {
   ],
   description: "Entwickler-Blog",
   output: resolve(__dirname, "dist"),
-  plugins: [
-    [
-      "vuepress-plugin-clean-urls",
-      {
-        normalSuffix: "/",
-        indexSuffix: "/",
-        notFoundPath: "/404.html"
-      }
-    ]
-  ],
-  // permalink: ':year/:month/:day/:slug',
-  serviceWorker: {
-    updatePopup: {
-      message: "Neuer Content verfügbar!",
-      buttonText: "Neu laden"
-    }
+  plugins: {
+    "vuepress-plugin-clean-urls": true,
+    "@vuepress/plugin-nprogress": true,
+    "@vuepress/back-to-top": true,
+    "@vuepress/medium-zoom": {
+      selector: 'img',
+    },
   },
+  // permalink: ':year/:month/:day/:slug',
+  // serviceWorker: {
+  //   updatePopup: {
+  //     message: "Neuer Content verfügbar!",
+  //     buttonText: "Neu laden"
+  //   }
+  // },
   themeConfig: {
-    minimumFeaturedArticles: 6,
+    minimumFeaturedArticles: 3,
     featuredArticles: ["angular-cli-quick-start/"],
     nav: [
       { text: "Home", link: "/" },

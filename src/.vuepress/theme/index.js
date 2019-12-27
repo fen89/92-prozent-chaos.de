@@ -7,7 +7,9 @@ module.exports = (options, ctx) => {
 
   return {
     plugins: [
-      "@vuepress/plugin-nprogress"
+      "@vuepress/plugin-nprogress",
+      '@vuepress/back-to-top',
+      '@vuepress/medium-zoom'
     ]
     // enhanceAppFiles: resolve(__dirname, "articles.js")
   };

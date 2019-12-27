@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="container">
-      <div class="flex flex-wrap">
+    <div class="container lg:max-w-lg xl:max-w-xl mb-16 mb-16">
+      <div class="flex flex-wrap -mx-5">
         <ArticleCard
           v-for="article in $featuredArticles"
           :key="article.key"

@@ -39,6 +39,8 @@
     "vuepress-plugin-clean-urls": "^1.1.1"
   },
   "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.2.0",
+    "@vuepress/plugin-medium-zoom": "^1.2.0",
     "autoprefixer": "^9.7.3",
     "tailwindcss": "^1.1.4",
     "vuepress": "^1.2.0"

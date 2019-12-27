@@ -22,6 +22,9 @@
         v-for="tag in tags"
         v-text="`${tag}`"
       ></div>
+      <div class="ml-5 flex-no-shrink">
+        <router-link to="/">Back to Home</router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -33,7 +36,11 @@ export default {
       return new Date(this.$page.frontmatter.date);
     },
     formattedDate() {
-      return this.date.toLocaleDateString('de-DE');
+      return this.date.toLocaleDateString('de-DE', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+      });
     },
     tags() {
       return this.$page.frontmatter.tags;

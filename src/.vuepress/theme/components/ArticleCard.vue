@@ -7,14 +7,14 @@
     <figure>
       <div
         class="h-48 rounded-t-lg bg-no-repeat bg-cover bg-center"
-        :style="`background-image: url:(${article.frontmatter.image})`"
+        :style="backgroundImageStyle"
       ></div>
     </figure>
     <main class="flex flex-1 flex-col bg-white rounded-b-lg p-6">
       <header>
         <div
           class="uppercase tracking-wide text-gray-600 text-sm font-semibold"
-          v-text="article.frontmatter.tags[0]"
+          v-text="tags"
         ></div>
         <div class="font-sans text-2xl " v-text="article.title"></div>
       </header>
@@ -23,9 +23,6 @@
         v-text="article.frontmatter.description"
       ></section>
     </main>
-    <div v-if="article.frontmatter.ribbon" :class="ribbonClass">
-      <span v-text="article.frontmatter.ribbon"></span>
-    </div>
   </router-link>
 </template>
 
@@ -34,6 +31,22 @@ export default {
   props: {
     article: Object,
     highlightEveryThird: Boolean
+  },
+
+  computed: {
+    tags() {
+      return this.article.frontmatter.tags.join(", ");
+    },
+
+    backgroundImage() {
+      return this.article.frontmatter.image || '/covers/header.jpeg';
+    },
+
+    backgroundImageStyle() {
+      return {
+        backgroundImage: `url('${this.$withBase(this.backgroundImage)}')`
+      };
+    }
   }
 };
 </script>

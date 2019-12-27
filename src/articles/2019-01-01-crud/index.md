@@ -1,6 +1,7 @@
 ---
 permalink: making-cron-expressions-human-readable
-image: /covers/making-cron-expressions-human-readable.png
+# image: /covers/making-cron-expressions-human-readable.png
+image: /covers/header.jpeg
 description: I’ve released a new PHP library that translates any valid CRON expression into some text that can be read and understood by humans.
 tags: [ 'PHP' ]
 date: 2019-06-07T15:19:00Z
