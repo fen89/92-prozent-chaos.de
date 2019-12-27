@@ -1,25 +1,21 @@
 <template>
   <div
-    class="flex flex-col text-gray-700 font-semibold bg-gray-400 border-t border-b border-gray-700 px-4 py-2 overflow-hidden"
+    class="flex flex-col sm:flex-row sm:items-center text-gray-700 font-semibold bg-gray-100 border-t border-b border-gray-400 px-4 py-2 overflow-hidden"
   >
-    <div class="flex flex-no-shrink items-center mb-2">
+    <div class="flex flex-no-shrink items-center mb-2 sm:mb-0 sm:mr-6">
       <Icon
-        icon="calendar"
+        icon="calendar-alt"
         class="w-5 flex-no-shrink"
-        primary="text-gray"
-        secondary="text-gray-900"
       />
       <div
         class="ml-2 flex-no-shrink"
-        v-text="date.toLocaleDateString('de-DE')"
+        v-text="formattedDate"
       ></div>
     </div>
     <div class="flex flex-no-shrink items-center">
       <Icon
         icon="tag"
         class="w-5 h-5 flex-no-shrink"
-        primary="text-grey"
-        secondary="text-grey-lightest"
       ></Icon>
       <div
         class="ml-2 flex-no-shrink"
@@ -31,14 +27,13 @@
 </template>
 
 <script>
-import Icon from "./Icon";
-
 export default {
-  components: { Icon },
-
   computed: {
     date() {
       return new Date(this.$page.frontmatter.date);
+    },
+    formattedDate() {
+      return this.date.toLocaleDateString('de-DE');
     },
     tags() {
       return this.$page.frontmatter.tags;

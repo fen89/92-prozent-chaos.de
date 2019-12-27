@@ -1,4 +1,8 @@
-import articles from "./articles"
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faCalendar, faCalendarAlt, faTag } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+import articles from "./articles";
 
 export default ({
     Vue, // the version of Vue being used in the VuePress app
@@ -8,4 +12,9 @@ export default ({
   }) => {
     // ...apply enhancements to the app
     Vue.mixin(articles);
+
+    // font awesome
+    library.add(...[faCalendarAlt, faTag]);
+
+    Vue.component('font-awesome-icon', FontAwesomeIcon);
   }
