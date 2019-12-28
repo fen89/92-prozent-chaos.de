@@ -26,15 +26,10 @@
     "node": ">=8"
   },
   "dependencies": {
-    "@fortawesome/fontawesome": "^1.1.8",
-    "@fortawesome/fontawesome-free-brands": "^5.0.13",
-    "@vuepress/plugin-back-to-top": "^1.0.0-alpha.0",
-    "@vuepress/plugin-blog": "^1.0.0-alpha.8",
-    "@vuepress/plugin-medium-zoom": "^1.0.0-alpha.0",
-    "@vuepress/plugin-notification": "^1.0.0-alpha.5",
-    "@vuepress/plugin-pwa": "^1.0.0-alpha.0",
-    "@vuepress/plugin-search": "^1.0.0-alpha.0",
-    "date-fns": "^1.29.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.26",
+    "@fortawesome/free-brands-svg-icons": "^5.12.0",
+    "@fortawesome/free-solid-svg-icons": "^5.12.0",
+    "@fortawesome/vue-fontawesome": "^0.1.9",
     "eslint": "^6.0.0",
     "gh-pages": "^2.0.1",
     "global": "^4.3.2",
@@ -42,10 +37,13 @@
     "prismjs": "^1.15.0",
     "prismjs-tomorrow-theme": "^0.0.1",
     "vue": "^2.5.17",
-    "vue-read-time": "^1.0.1",
-    "vuetify": "^1.2.5"
+    "vuepress-plugin-clean-urls": "^1.1.1"
   },
   "devDependencies": {
-    "vuepress": "1.1.0"
+    "@vuepress/plugin-back-to-top": "^1.2.0",
+    "@vuepress/plugin-medium-zoom": "^1.2.0",
+    "autoprefixer": "^9.7.3",
+    "tailwindcss": "^1.1.4",
+    "vuepress": "^1.2.0"
   }
 }
