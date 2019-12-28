@@ -3,19 +3,10 @@ const { resolve } = require("path");
 module.exports = {
   base: "/",
   title: "92-prozent-chaos",
-  head: [
+  // head: [
     // ['link', { rel: 'icon', href: '/assets/img/avatar.jpg' }],S
-    [
-      // "link",
-      // {
-      //   rel: "stylesheet",
-      //   href:
-      //     "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"
-      // }
-    ]
-    // ['link', { rel: 'stylesheet', href: 'https://unpkg.com/vuetify/dist/vuetify.min.css' }]
-  ],
-  description: "Entwickler-Blog",
+  // ],
+  description: "Frotend programming",
   output: resolve(__dirname, "dist"),
   plugins: {
     "vuepress-plugin-clean-urls": true,

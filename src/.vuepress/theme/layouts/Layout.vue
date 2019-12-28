@@ -8,12 +8,12 @@
 
 <script>
 import { isArticle } from '@theme/utils';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from '@theme/components/Header';
+import Footer from '@theme/components/Footer';
 
-import HomeLayout from './layouts//HomeLayout';
-import ArticleLayout from './layouts/ArticleLayout';
-import BaseLayout from './layouts/BaseLayout';
+import HomeLayout from '@theme/layouts//HomeLayout';
+import ArticleLayout from '@theme/layouts/ArticleLayout';
+import BaseLayout from '@theme/layouts/BaseLayout';
 
 export default {
   components: { Header, Footer, HomeLayout, ArticleLayout, BaseLayout },
@@ -34,5 +34,5 @@ export default {
 </script>
 
 <style lang="stylus">
-  @import './styles/style.styl';
+  @import '../styles/style.styl';
 </style>

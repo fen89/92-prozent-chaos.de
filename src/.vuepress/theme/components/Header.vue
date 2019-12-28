@@ -2,7 +2,7 @@
   <div>
     <!-- <Navbar /> -->
     <GradientBar class="h-3" />
-    <div class="container my-16">
+    <div class="container my-16" v-if="hasTitle">
       <div
         class="text-black font-serif text-4xl md:text-5xl font-semibold leading-tight mr-12 sm:mr-20 lg:mr-0"
         v-text="title"
@@ -29,6 +29,9 @@ export default {
     },
     subtitle() {
       return this.$page.frontmatter.subtitle;
+    },
+    hasTitle() {
+      return Boolean(this.title);
     }
   }
 };
