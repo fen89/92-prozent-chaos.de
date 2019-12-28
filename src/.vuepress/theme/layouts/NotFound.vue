@@ -5,14 +5,11 @@
         <div class="text-black text-5xl md:text-15xl font-black">404</div>
         <div class="w-16 h-1 bg-purple-light my-3 md:my-6"></div>
         <p
-          class="text-grey-darker text-2xl md:text-3xl font-light mb-8 leading-normal"
-        >
-          How did you get here?
-        </p>
+          class="text-grey-darker text-2xl md:text-3xl font-light mb-8 leading-normal" v-text="getMessage" />
         <router-link
           to="/"
           tag="button"
-          class="bg-transparent text-gray-900 font-bold uppercase tracking-wide py-3 px-6 border-2 border-grey-light hover:border-grey rounded-lg"
+          class="bg-transparent hover:bg-teal-600 hover:text-white text-gray-900 font-bold uppercase tracking-wide py-3 px-6 border-2 border-grey-light hover:border-grey rounded-lg"
         >
           Take me Home
         </router-link>
@@ -30,10 +27,20 @@ import Header from "@theme/components/Header";
 import Footer from "@theme/components/Footer";
 import NotFound from "@theme/components/NotFound";
 
+const messages = [
+  `There's nothing here.`,
+  `How did we get here?`,
+  `That's a Four-Oh-Four.`,
+  `Looks like we've got some broken links.`
+];
+
 export default {
   components: { Header, Footer, NotFound },
 
   computed: {
+    getMessage () {
+      return messages[Math.floor(Math.random() * messages.length)];
+    },
     backgroundImage() {
       return "/covers/header.jpeg";
     },

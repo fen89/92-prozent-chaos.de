@@ -8,14 +8,16 @@
     <div class="bg-gray-400 mt-16">
       <div class="container py-4" v-if="hasRelatedArticles">
         <h2>Related articles</h2>
-        <div class="flex flex-wrap">
+        <!-- <div class="flex flex-wrap"> -->
+        <transition-group appear name="list" tag="div" class="flex flex-wrap">
           <ArticleCard
             v-for="article in relatedArticles"
             :key="article.key"
             :article="article"
-            class="mx-5 mb-8 -mx-5"
+            class="mx-5 mb-8 -mx-5 list-item"
           />
-        </div>
+        </transition-group>
+        <!-- </div> -->
       </div>
     </div>
   </div>
@@ -46,3 +48,13 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.list-enter-active, .list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+</style>
