@@ -2,11 +2,15 @@ const path = require('path');
 const baseUrl = process.env.BASE_URL || 'http://92-prozent-chaos.de'
 
 export default {
-  mode: 'spa',
+ // mode: 'spa',
+  target: 'static',
   components: true,
   env: {
     baseUrl
   },
+  // router: {
+    // base: baseUrl
+  // },
   /*
    ** Headers of the page
    */

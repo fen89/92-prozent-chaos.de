@@ -1,5 +1,8 @@
 module.exports = {
-  purge: [],
+  purge: [
+    './pages/**/*.vue',
+    './components/**/*.vue'
+  ],
   theme: {
     screens: {
       sm: '576px',
