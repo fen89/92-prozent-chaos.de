@@ -1,7 +1,10 @@
 module.exports = {
   purge: [
-    './pages/**/*.vue',
-    './components/**/*.vue'
+    'components/**/*.vue',
+    'layouts/**/*.vue',
+    'pages/**/*.vue',
+    'plugins/**/*.js',
+    'nuxt.config.js'
   ],
   theme: {
     screens: {
@@ -10,8 +13,8 @@ module.exports = {
       lg: '992px',
       xl: '1280px'
     },
-    extend: {},
+    extend: {}
   },
   variants: {},
-  plugins: [],
+  plugins: []
 }
