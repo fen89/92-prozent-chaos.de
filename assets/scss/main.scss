@@ -1,0 +1,19 @@
+// @import './variables.scss'; // Import buefy and bulma styles
+// @import '~bulma';
+// @import '~buefy/src/scss/buefy'; // Import your other app styles
+// @import './app';
+
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import './app';
+
+.nuxt-content-highlight {
+  @apply relative;
+}
+.nuxt-content-highlight .filename {
+  @apply absolute right-0 text-white font-light italic z-10 mr-2 mt-1 text-sm;
+}
+

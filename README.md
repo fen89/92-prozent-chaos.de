@@ -1,18 +1,22 @@
-# [92-prozent-chaos-de](https://92-prozent-chaos.de) [![Build Status](https://travis-ci.org/fen89/fen89.github.io.svg?branch=development)](https://travis-ci.org/fen89/fen89.github.io)
+# 92-prozent-chaos.de
 
-My homepage repository
+> my personal blog
 
-Powered by [Vuepress](https://vuepress.vuejs.org/)
+## Build Setup
 
-## Develop
+```bash
+# install dependencies
+$ yarn install
 
+# serve with hot reload at localhost:3000
+$ yarn dev
+
+# build for production and launch server
+$ yarn build
+$ yarn start
+
+# generate static project
+$ yarn generate
 ```
-yarn
-yarn dev
-```
 
-# Deploy
-
-```
-yarn deploy
-```
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
