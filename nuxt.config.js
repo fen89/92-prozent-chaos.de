@@ -1,16 +1,27 @@
-const path = require('path');
+const path = require('path')
 const baseUrl = process.env.BASE_URL || 'http://92-prozent-chaos.de'
 
+console.log('deploy env: ' + process.env.DEPLOY_ENV)
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+        router: {
+          base: '/fen89.github.io/'
+        }
+      }
+    : {}
+
 export default {
- // mode: 'spa',
+  mode: 'spa',
+  
+  ...routerBase,
+
   target: 'static',
+
   components: true,
   env: {
     baseUrl
   },
-  // router: {
-    // base: baseUrl
-  // },
   /*
    ** Headers of the page
    */
@@ -34,7 +45,8 @@ export default {
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap',
+        href:
+          'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap'
       }
     ]
   },
@@ -52,7 +64,7 @@ export default {
   plugins: [
     '~/plugins/global-components',
     '~/plugins/filters',
-    '~/plugins/vue-lazyload',
+    '~/plugins/vue-lazyload'
     // '~/plugins/prism'
   ],
   /*
@@ -74,7 +86,7 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     '@nuxt/content',
-    'nuxt-purgecss',
+    'nuxt-purgecss'
   ],
   hooks: {
     'content:file:beforeInsert': (document) => {
@@ -92,10 +104,12 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
-  generate: {},
+  generate: {
+    fallback: '404.html'
+  },
   purgeCSS: {
     mode: 'postcss',
-    enabled: (process.env.NODE_ENV === 'production')
+    enabled: process.env.NODE_ENV === 'production'
   },
   content: {
     markdown: {
