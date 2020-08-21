@@ -107,10 +107,10 @@ export default {
   generate: {
     fallback: '404.html'
   },
-  purgeCSS: {
-    mode: 'postcss',
-    enabled: process.env.NODE_ENV === 'production'
-  },
+  // purgeCSS: {
+  //   mode: 'postcss',
+  //   enabled: process.env.NODE_ENV === 'production'
+  // },
   tailwindcss: {
     cssPath: '~/assets/scss/main.scss'
   },
