@@ -106,10 +106,10 @@ export default {
   generate: {
     fallback: '404.html'
   },
-  purgeCSS: {
-    mode: 'postcss',
-    enabled: process.env.NODE_ENV === 'production'
-  },
+  // purgeCSS: {
+  //   mode: 'postcss',
+  //   enabled: process.env.NODE_ENV === 'production'
+  // },
   content: {
     markdown: {
       prism: {
@@ -121,6 +121,7 @@ export default {
    ** Build configuration
    */
   build: {
+    extractCss: true,
     postcss: {
       plugins: {
         'postcss-import': {},

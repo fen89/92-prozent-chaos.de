@@ -17,3 +17,55 @@
   @apply absolute right-0 text-white font-light italic z-10 mr-2 mt-1 text-sm;
 }
 
+.icon.icon-link {
+  background-image: url('~assets/svg/icon-hashtag.svg');
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+}
+
+.nuxt-content {
+  font-family: Source Sans Pro, HelveticaNeue-Light, Helvetica Neue Light,
+    Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+  @apply p-5;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply mt-10;
+  }
+  h1 {
+    font-weight: bold;
+    font-size: 30px;
+  }
+  h2 {
+    font-weight: bold;
+    font-size: 28px;
+  }
+  h3 {
+    font-weight: bold;
+    font-size: 22px;
+  }
+  p {
+    @apply my-8;
+    line-height: 32px;
+    font-size: 21px;
+
+    code {
+      font-size: 75%;
+      @apply p-1 text-gray-800 bg-gray-100;
+    }
+
+    a {
+      @apply underline;
+    }
+  }
+
+  pre {
+    background-color: #2f495e;
+    @apply rounded;
+  }
+}
