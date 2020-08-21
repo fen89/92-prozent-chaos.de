@@ -1,20 +1,19 @@
 const path = require('path')
 const baseUrl = process.env.BASE_URL || 'http://92-prozent-chaos.de'
 
-console.log('deploy env: ' + process.env.DEPLOY_ENV)
-const routerBase =
-  process.env.DEPLOY_ENV === 'GH_PAGES'
-    ? {
-        router: {
-          base: '/fen89.github.io/'
-        }
-      }
-    : {}
+// const routerBase =
+//   process.env.DEPLOY_ENV === 'GH_PAGES'
+//     ? {
+//         router: {
+//           base: '/fen89.github.io/'
+//         }
+//       }
+//     : {}
 
 export default {
   mode: 'universal',
   
-  ...routerBase,
+  // ...routerBase,
 
   target: 'static',
 
