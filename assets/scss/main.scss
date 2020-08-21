@@ -1,21 +1,8 @@
-// @import './variables.scss'; // Import buefy and bulma styles
-// @import '~bulma';
-// @import '~buefy/src/scss/buefy'; // Import your other app styles
-// @import './app';
-
-
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 @import './app';
-
-.nuxt-content-highlight {
-  @apply relative;
-}
-.nuxt-content-highlight .filename {
-  @apply absolute right-0 text-white font-light italic z-10 mr-2 mt-1 text-sm;
-}
 
 .icon.icon-link {
   background-image: url('~assets/svg/icon-hashtag.svg');
@@ -68,4 +55,24 @@
     background-color: #2f495e;
     @apply rounded;
   }
+
+  .nuxt-content-highlight {
+    @apply relative;
+
+    .filename {
+      @apply absolute;
+      @apply right-0;
+      @apply text-white;
+      @apply font-light;
+      @apply italic;
+      @apply z-10;
+      @apply mr-2;
+      @apply mt-1;
+      @apply text-sm;
+    }
+  }
+}
+
+.nuxt-content-highlight {
+  @apply relative;
 }

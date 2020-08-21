@@ -1,11 +1,10 @@
 module.exports = {
-  purge: [
-    'components/**/*.vue',
-    'layouts/**/*.vue',
-    'pages/**/*.vue',
-    'plugins/**/*.js',
-    'nuxt.config.js'
-  ],
+  // purge: [
+  //   'components/**/*.vue',
+  //   'layouts/**/*.vue',
+  //   'pages/**/*.vue',
+  //   'plugins/**/*.js',
+  // ],
   theme: {
     screens: {
       sm: '576px',

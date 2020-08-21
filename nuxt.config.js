@@ -72,6 +72,7 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     // '@nuxtjs/eslint-module'
+    '@nuxtjs/tailwindcss'
   ],
   /*
    ** Nuxt.js modules
@@ -85,7 +86,7 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     '@nuxt/content',
-    'nuxt-purgecss'
+    // 'nuxt-purgecss'
   ],
   hooks: {
     'content:file:beforeInsert': (document) => {
@@ -106,10 +107,13 @@ export default {
   generate: {
     fallback: '404.html'
   },
-  // purgeCSS: {
-  //   mode: 'postcss',
-  //   enabled: process.env.NODE_ENV === 'production'
-  // },
+  purgeCSS: {
+    mode: 'postcss',
+    enabled: process.env.NODE_ENV === 'production'
+  },
+  tailwindcss: {
+    cssPath: '~/assets/scss/main.scss'
+  },
   content: {
     markdown: {
       prism: {
@@ -121,12 +125,14 @@ export default {
    ** Build configuration
    */
   build: {
-    extractCss: true,
+    extractCss: {
+      allChunks: true
+    },
     postcss: {
       plugins: {
-        'postcss-import': {},
+        // 'postcss-import': {},
         tailwindcss: path.resolve(__dirname, './tailwind.config.js'),
-        'postcss-nested': {}
+        // 'postcss-nested': {}
       }
     },
     preset: {
