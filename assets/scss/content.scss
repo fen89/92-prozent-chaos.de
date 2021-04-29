@@ -1,0 +1,209 @@
+// .light-mode .nuxt-content {
+.nuxt-content {
+  // Theme light
+
+  h2,
+  h3,
+  p {
+    color: theme('colors.light');
+  }
+
+  blockquote {
+    color: theme('colors.light');
+  }
+
+  & a {
+    @apply text-green-300;
+
+    &:hover {
+      @apply underline;
+    }
+
+    & code {
+      @apply text-green-300;
+
+      &:hover {
+        @apply text-green-500;
+      }
+    }
+  }
+
+  // inline code snippet
+  & code {
+    @apply bg-gray-100 text-green-500;
+  }
+
+  & pre {
+    @apply static;
+    background-color: theme('colors.dark');
+
+    code {
+      color: theme('colors.dark');
+    }
+  }
+
+  // code snippet block
+  & pre {
+    code {
+      @apply bg-transparent;
+      color: theme('colors.dark');
+    }
+  }
+}
+
+.nuxt-content {
+  img {
+    @apply rounded;
+    margin: auto;
+  }
+
+  video {
+    width: 100%;
+  }
+
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    & a {
+      margin: 0 -1.5rem 0 -1.5rem;
+      padding: 0 1.5rem 1.7rem 0;
+    }
+
+    & a,
+    .icon-link {
+      @apply float-left inline-block mt-2 relative w-4 h-4;
+    }
+
+    &:hover {
+      & .icon-link {
+        visibility: visible;
+      }
+    }
+  }
+
+  & h2 {
+    @apply relative text-3xl font-semibold table mt-8 mb-3;
+
+    & code {
+      @apply text-xl;
+    }
+
+    & a.icon-link {
+      @apply pt-2;
+    }
+  }
+
+  & h3 {
+    @apply relative text-2xl font-semibold table mt-8 pb-3;
+
+    & code {
+      @apply text-lg;
+    }
+
+    & a.icon {
+      @apply pt-2;
+    }
+  }
+
+  & h4 {
+    @apply relative text-xl font-semibold table pt-6 pb-2;
+
+    & code {
+      @apply text-base;
+    }
+
+    & a.icon {
+      @apply pt-0;
+    }
+  }
+
+  p {
+    @apply leading-relaxed py-1 mb-2 transition-colors duration-300 ease-linear;
+  }
+
+  & li p {
+    @apply inline-block;
+  }
+
+  & blockquote {
+    @apply italic leading-loose;
+  }
+
+  & code {
+    @apply not-italic p-1 rounded text-sm;
+  }
+
+  & a {
+    @apply break-words;
+
+    &:hover {
+      @apply underline;
+    }
+  }
+
+  & b,
+  & strong {
+    @apply font-bold;
+  }
+
+  // code snippet block
+  & pre {
+    @apply rounded p-2 my-2 overflow-auto;
+
+    & code {
+      @apply bg-transparent p-0;
+    }
+  }
+}
+
+// lists
+.nuxt-content {
+  & ul,
+  & ol {
+    @apply list-inside py-1 pl-1;
+
+    & li {
+      @apply py-2;
+    }
+
+    & ul,
+    & ol {
+      @apply pl-4 pt-1;
+    }
+  }
+
+  & ol {
+    @apply list-decimal;
+  }
+
+  & ul {
+    @apply list-disc;
+  }
+}
+
+// highlight code page
+.nuxt-content-highlight {
+  @apply relative;
+
+  & > .filename {
+    @apply absolute right-0 top-0 text-gray-400 font-light z-10 mr-2 mt-1 text-sm;
+  }
+
+  & > .copy {
+    @apply hidden absolute right-0 bottom-0 leading-none shadow-lg px-1 py-1 text-white bg-gray-800 text-sm uppercase rounded-md border border-white font-semibold mr-2 mb-2;
+    &:hover {
+      @apply bg-gray-700;
+    }
+    &:focus {
+      @apply outline-none bg-gray-900;
+    }
+  }
+
+  &:hover {
+    & > .copy {
+      @apply block;
+    }
+  }
+}

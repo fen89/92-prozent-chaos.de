@@ -1,36 +1,28 @@
 <template>
-  <div class="container mx-auto px-5">
-    <article>
-      <h1 class="text-3xl font-medium text-center text-teal-500 title-font mb-2">{{ post.title }}</h1>
-      <p class="mt-1 text-gray-500 text-md text-center">
-        <span class="uppercase">{{ post.createdAt | date('DD MMM YYYY') }}</span>
-        <!-- -->·<!-- -->
-        <span>{{ post.readingTime }}</span>
-      </p>
-      <nuxt-content :document="post" />
-
-      <prev-next :prev="previousPost" :next="nextPost" />
-    </article>
+  <div>
+    <div class="container p-4 pb-8 mx-auto lg:max-w-4xl">
+      <BlogPostItem :post="post" />
+    </div>
   </div>
 </template>
 
 <script>
-import PrevNext from '~/components/PrevNext'
+import BlogPostItem from '~/components/pages/blog/BlogPostItem'
 
 export default {
   name: 'PostPage',
 
-  components: { PrevNext },
+  components: { BlogPostItem },
 
   async fetch() {
     const slug = this.$route.params.slug
 
     try {
-      this.post = await this.$content(`posts/${slug}`)
+      this.post = await this.$content(`blog/${slug}`)
         .where({ draft: false })
         .fetch()
 
-      const [next, prev] = await this.$content(`posts`)
+      const [next, prev] = await this.$content(`blog`)
         // .only(['title', 'path'])
         .sortBy('createdAt')
         .where({ draft: false })
@@ -72,5 +64,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 </style>

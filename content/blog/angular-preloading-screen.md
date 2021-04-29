@@ -1,11 +1,13 @@
 ---
 title: Create a custom preloading screen in Angular
-date: '04/01/2020'
 description: |
   I'm  quite sure that you know these kind of situations. You opened a web app and you are staring at a completely white screen - and nothing seems to happen. 
+date: '2020-04-01'
+authors: 
+  - name: Tobi
+    avatarUrl: '/img/authors/tobi.jpg'
 tags: 
   - Angular
-category: Angular
 draft: false
 ---
 

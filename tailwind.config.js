@@ -7,12 +7,25 @@ module.exports = {
   // ],
   theme: {
     screens: {
-      sm: '576px',
+      sm: '640px',
       md: '768px',
-      lg: '992px',
+      lg: '1024px',
       xl: '1280px'
     },
-    extend: {}
+    extend: {
+      fontSize: {
+        ss: '0.666666rem'
+      },
+      colors: {
+        primary: {
+          base: '#00C58E',
+          light: '#00E0A1',
+          dark: '#07A377'
+        },
+        light: '#2F495E',
+        dark: 'orange'
+      }
+    }
   },
   variants: {},
   plugins: []

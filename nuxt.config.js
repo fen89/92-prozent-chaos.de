@@ -1,19 +1,8 @@
 const path = require('path')
 const baseUrl = process.env.BASE_URL || 'http://92-prozent-chaos.de'
 
-// const routerBase =
-//   process.env.DEPLOY_ENV === 'GH_PAGES'
-//     ? {
-//         router: {
-//           base: '/fen89.github.io/'
-//         }
-//       }
-//     : {}
-
 export default {
   mode: 'universal',
-  
-  // ...routerBase,
 
   target: 'static',
 
@@ -37,17 +26,22 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap'
-      },
+      // {
+      //   rel: 'stylesheet',
+      //   href:
+      //     'https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap'
+      // },
       {
         rel: 'stylesheet',
         href:
           'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap'
       }
-    ]
+    ],
+    bodyAttrs: {
+      class: [
+        'font-sans transition-colors duration-300 ease-linear'
+      ]
+    }
   },
   /*
    ** Customize the progress-bar color
@@ -64,7 +58,6 @@ export default {
     '~/plugins/global-components',
     '~/plugins/filters',
     '~/plugins/vue-lazyload'
-    // '~/plugins/prism'
   ],
   /*
    ** Nuxt.js dev-modules
@@ -78,8 +71,6 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://buefy.github.io/#/documentation
-    // 'nuxt-buefy',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
@@ -92,7 +83,7 @@ export default {
     'content:file:beforeInsert': (document) => {
       if (document.extension === '.md') {
         const readingTime = require('reading-time')
-        const { text } = readingTime(document.text)
+        const { text } = readingTime(document.text, { lang: 'de' })
 
         document.readingTime = text
         document.content = document.text
@@ -117,6 +108,7 @@ export default {
   content: {
     markdown: {
       prism: {
+        // theme: 'prism-themes/themes/prism-material-dark.css'
         theme: 'prism-themes/themes/prism-material-oceanic.css'
       }
     }
@@ -142,15 +134,6 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {
-      // add frontmatter-markdown-loader
-      // config.module.rules.push({
-      //   test: /\.md$/,
-      //   include: path.resolve(__dirname, 'content'),
-      //   loader: 'frontmatter-markdown-loader',
-      //   options: {
-      //     mode: [Mode.VUE_COMPONENT, Mode.META]
-      //   }
-      // })
     }
   }
 }
